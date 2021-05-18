@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'Django_2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Django_2',
+        'NAME': 'django_2',
         'USER': 'Jeferson',
         'PASSWORD': 'qwertyuiop',
         'HOST': 'localhost',
