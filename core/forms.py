@@ -6,7 +6,7 @@ class ContatoForm(forms.Form):
     nome = forms.CharField(label='Nome', max_length=100)
     email = forms.EmailField(label='E-mail', max_length=100)
     assunto = forms.CharField(label='Assunto', max_length=120)
-    mensagem = forms.CharField(label='Mensagem', widget=forms.Textarea(), min_length=25)
+    mensagem = forms.CharField(label='Mensagem', widget=forms.Textarea(), min_length=5)
 
     def send_email(self):
         nome = self.cleaned_data['nome']
@@ -20,6 +20,7 @@ class ContatoForm(forms.Form):
             subject='E-mail de Contato - Django_2 System',
             body=conteudo,
             from_email='jeferson.dev.testes@gmail.com',
+            to=['jeferson.dev.testes@gmail.com', ],
             headers={'Reply-To': email}
         )
         mail.send()

@@ -3,8 +3,6 @@ from django.contrib import messages
 
 from .forms import ContatoForm
 
-from .send_email import send_email
-
 
 def index(request):
     return render(request, 'index.html')
@@ -16,17 +14,7 @@ def contato(request):
     if str(request.method) == 'POST':
         print(f'POST: {request.POST}')
         if form.is_valid():
-            nome = form.cleaned_data['nome']
-            email = form.cleaned_data['email']
-            assunto = form.cleaned_data['assunto']
-            mensagem = form.cleaned_data['mensagem']
-
-            print("Mensagem Enviada\n")
-            print(f'Nome: {nome}')
-            print(f'E-mail : {email}')
-            print(f'Assunto : {assunto}')
-            print(f'Mensagem : {mensagem}')
-
+            form.send_email()
             messages.success(request, 'E-mail enviado com sucesso !')
             form = ContatoForm()
         else:
