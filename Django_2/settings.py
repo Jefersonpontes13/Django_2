@@ -80,6 +80,7 @@ WSGI_APPLICATION = 'Django_2.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # Usando PostgreSQL com Heroku
+"""
 DATABASES = {
     'default': dj_database_url.config()
 }
@@ -95,7 +96,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-"""
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
